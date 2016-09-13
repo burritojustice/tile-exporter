@@ -306,7 +306,7 @@ var TileExporter = (function() {
             var previewPath = d3.geo.path().projection(previewProjection);
             var path = d3.geo.path().projection(projection);
 
-            var defaultHeight = 60;
+            var defaultHeight = 70;
 
             if(obj === 'earth') {
               var b = path.bounds(geoFeature);
@@ -314,11 +314,11 @@ var TileExporter = (function() {
               tileY = b[0][1];
               tileW = b[1][0] - b[0][0];
               tileH = b[1][1] - b[0][1];
-              defaultHeight = 35;
+              defaultHeight = 40;
             } else if(obj === 'water') {
-              defaultHeight = 35;
+              defaultHeight = 40;
             } else if(obj === 'landuse') {
-              defaultHeight = 35;
+              defaultHeight = 40;
             }
 
             //path = d3.geo.path().projection(projection);
@@ -333,7 +333,7 @@ var TileExporter = (function() {
               else {
                 var mesh = dthreed.exportSVG(feature);
                 buildings.push(mesh);
-                var h = (geoFeature.properties['height']+30) || defaultHeight;
+                var h = (geoFeature.properties['height']+60) || defaultHeight;
                 heights.push(h);
               }
             }
